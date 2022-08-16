@@ -6,3 +6,16 @@
 
 ## Relevant repos
 
+## Relevant datasets
+
+CPTAC
+
+European clinical trials
+Clinicaltrials.gov
+
+TCGA (SV)
+
+SRA dataset list
+
+UK Biobank
+
