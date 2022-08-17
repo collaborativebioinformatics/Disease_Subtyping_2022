@@ -20,6 +20,12 @@ CRC CMS:
 
 https://www.nature.com/articles/nm.3967#MOESM37
 
+Proteomics:
+
+https://pubmed.ncbi.nlm.nih.gov/31031003/
+
+https://www.nature.com/articles/nature13438
+
 
 
 ## Relevant repos
@@ -45,3 +51,4 @@ SRA dataset list
 
 UK Biobank
 
+The Human Protein Atlas: https://www.proteinatlas.org
