@@ -4,6 +4,8 @@
 
 ## Relevant Literature
 
+Clinical Outcomes:
+
 https://pubmed.ncbi.nlm.nih.gov/33041226/
 
 Colotype:
@@ -36,10 +38,11 @@ https://github.com/BioITHackathons/Creating-Computable-Knowledge-from-Unstructur
 ## Relevant datasets
 
 CPTAC
+https://proteomic.datacommons.cancer.gov/pdc/
 proteinatlas.org
 
 
-European clinical trials
+https://www.clinicaltrialsregister.eu
 Clinicaltrials.gov
 
 TCGA (SV)
