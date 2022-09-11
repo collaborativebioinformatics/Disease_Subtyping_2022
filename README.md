@@ -37,21 +37,43 @@ https://github.com/BioITHackathons/Creating-Computable-Knowledge-from-Unstructur
 
 ## Relevant datasets
 
+#### Proteomics
+
 CPTAC
-https://proteomic.datacommons.cancer.gov/pdc/
-proteinatlas.org
+  https://proteomic.datacommons.cancer.gov/pdc/
+The Human Protein Atlas
+  https://www.proteinatlas.org
+  
+#### Clinical Trials
 
+EU Clinical Trials Registry
+  https://www.clinicaltrialsregister.eu
+US Clinical Trials Registry
+  clinicaltrials.gov
 
-https://www.clinicaltrialsregister.eu
-Clinicaltrials.gov
+#### Cancer Datasets
 
 TCGA (SV)
-https://www.cell.com/cell/fulltext/S0092-8674(18)30229-0
-xena.ucsc.edu
 
+  <Link missing>
 
-SRA dataset list
+<Header missing>
+
+  https://www.cell.com/cell/fulltext/S0092-8674(18)30229-0
+  
+<Header missing>
+  xena.ucsc.edu
+
+#### SRA dataset list
+
+See files
+  SRR_Acc_List_cms{x}.txt
+
+#### Biobanks 
 
 UK Biobank
+  ukbiobank.dnanexus.com
 
-The Human Protein Atlas: https://www.proteinatlas.org
+#### Imaging repositories
+
+
