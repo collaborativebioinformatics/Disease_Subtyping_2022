@@ -34,6 +34,8 @@ https://www.nature.com/articles/nature13438
 
 https://github.com/BioITHackathons/Creating-Computable-Knowledge-from-Unstructured-Information (Emerson look at this)
 
+the script with 'drug vs association count' table: https://github.com/collaborativebioinformatics/Disease_subsetting/blob/main/maayan-drug-discovery.ipynb
+
 
 ## Relevant datasets
 
