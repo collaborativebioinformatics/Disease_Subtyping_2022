@@ -28,7 +28,13 @@ https://pubmed.ncbi.nlm.nih.gov/31031003/
 
 https://www.nature.com/articles/nature13438
 
+Small Cell Lung Cancer:
 
+https://pubmed.ncbi.nlm.nih.gov/31877723/
+
+Ovarian Cancer:
+
+https://link.springer.com/article/10.1186/s13073-021-00952-5
 
 ## Relevant repos
 
