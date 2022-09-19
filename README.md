@@ -86,3 +86,9 @@ UK Biobank
 
 TCIA (The Cancer Imaging Archive)
   https://wiki.cancerimagingarchive.net/display/Public/CT+COLONOGRAPHY
+
+## Tools
+
+SUMO: https://github.com/ratan-lab/sumo
+
+MultiPLIER: https://github.com/greenelab/multi-plier
