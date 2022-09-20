@@ -92,3 +92,5 @@ TCIA (The Cancer Imaging Archive)
 SUMO: https://github.com/ratan-lab/sumo
 
 MultiPLIER: https://github.com/greenelab/multi-plier
+
+Boruta R package (feature selection): https://www.jstatsoft.org/article/view/v036i11
