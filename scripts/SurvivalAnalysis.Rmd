@@ -1,0 +1,112 @@
+---
+title: "Survival analysis for TGCA colorectal cancer data"
+author: "Yusuke Suita"
+date: "2022-11-07"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(survminer)
+library(survival)
+library(tidyr) 
+library(shiny)
+```
+
+## Inputs and Data Cleaning
+
+Inputs are TCGA correctal cancer patients (Patient ID) with overall survival data (e.g. days_to_death) and treatment
+
+Expected outputs are survival analysis for population of the patients with specific subtypes and treatments
+
+```{r}
+#Install treatment and clinical data
+colorectal_treatment<-openxlsx::read.xlsx(xls="/Users/ysuita/Desktop/Disease_Subtyping_2022/TGCAclinical_treatment.xlsx",sheet=1)
+colorectal_clinical<-openxlsx::read.xlsx(xls="/Users/ysuita/Desktop/Disease_Subtyping_2022/TGCAclinical_treatment.xlsx",sheet=2)
+
+#Combine treatment and survival data
+##survival data
+colorectal_survival<-dplyr::select(colorectal_clinical,c('case_submitter_id','vital_status','days_to_death'))
+colorectal_survival$vital_status[colorectal_survival$vital_status=="Dead"]<-TRUE
+colorectal_survival$vital_status[colorectal_survival$vital_status=="Alive"]<-FALSE
+###remove duplicate rows 
+col_sur_nodup<-colorectal_survival[!duplicated(colorectal_survival),]
+rownames(col_sur_nodup)<-col_sur_nodup$case_submitter_id
+col_sur<-col_sur_nodup[,-1]
+
+##treatment data
+col_ID_treatment<-dplyr::select(colorectal_treatment,c('bcr_patient_barcode','pharmaceutical_therapy_drug_name'))
+col_ID_treat_clean<-col_ID_treatment[-1:-2,]
+
+# levels(factor(col_ID_treat_clean$pharmaceutical_therapy_drug_name)) #this return shows there is inconsistency in labeling
+# factor(tolower(col_ID_treat_clean$pharmaceutical_therapy_drug_name)) #This shows different names for 5-fu
+
+###Change names for 5-fu (5 FU, 5-FU, 5FU, 5- FU,5-Flouorouracil,fluorouracil,Fluorouracil,FLUOROURACIL)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("5 FU","5-FU","5FU","5 -FU","5-Flouorouracil","5 -FU","5-Fluoruoracil","5- FU","5-Fluorouracil","fluorouracil","Fluorouracil","FLUOROURACIL")]<-"5-fu"
+
+###Change names for Avastin (avastin)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("avastin")]<-"Avastin"
+
+###Change names for Capecitabine (capecitabine)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("capecitabine")]<-"Capecitabine"
+
+###Change names for Cetuximab (Cetuximab,CETUXimab,Cetuximab Study drug)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("Cetuximab","CETUXimab","Cetuximab Study drug")]<-"Cetuximab"
+  
+###Change names for Bevacizumab (bevacizumab,BEVACIZumab,BEVACIZUMAB)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("bevacizumab","BEVACIZumab","BEVACIZUMAB")]<-"Bevacizumab"
+
+###Change names for Flofiri (FOLFIRI,Folfiri)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("FOLFIRI","Flofiri")]<-"Folfiri"
+
+###Change names for Folfox (FolFox,FOLFOX)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("FolFox","FOLFOX")]<-"Folfox"
+
+###Change names for Folinic acid (Folinic Acid)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("Folinic Acid")]<-"Folinic acid"
+
+###Change names for Irinotecan (irinotecan,Irinotecan HCl,Irinotecan HCL,IRINOtecan HCl)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("irinotecan","Irinotecan HCl","Irinotecan HCL","IRINOtecan HCl")]<-"Irinotecan"
+
+###Change names for Leucovorin (leucovorin,Levcovorin,Folinic acid)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("leucovorin","Levcovorin","Folinic acid")]<-"Leucovorin"
+
+###Change names for Leucovorin Calcium(leucovorin calcium)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("leucovorin calcium")]<-"Leucovorin Calcium"
+
+###Change names for Mitomycin (Mitomycin C)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("Mitomycin C")]<-"Mitomycin"
+
+###Change names for Oxaliplatin (oxaliplatin,OXALIPLATIN)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("oxaliplatin","OXALIPLATIN")]<-"Oxaliplatin"
+
+###Chagne names for Xeloda (XELODA)
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("XELODA")]<-"Xeloda"
+
+###Chagne names for Pegfilgrastim (Pegfilgrastim (Peg G-CSF))
+col_ID_treat_clean$pharmaceutical_therapy_drug_name[col_ID_treat_clean$pharmaceutical_therapy_drug_name %in% c("Pegfilgrastim (Peg G-CSF)")]<-"Pegfilgrastim"
+
+###Create matrix (row:patient ID, column: treatment) Note: "treatment" is defined by whether the patients receive treatment more than one time or not (e.g. we put into the same group those who receive treatment once and treatment several times)
+ID_treatment_df<-as.data.frame.matrix(table(col_ID_treat_clean))
+ID_treatment_df[,1]<-rownames(ID_treatment_df)
+colnames(ID_treatment_df)[1]="case_submitter_id"
+survival_treatment<-merge(ID_treatment_df,col_sur_nodup,by="case_submitter_id")
+
+survival_treatment[survival_treatment$days_to_death=="'--",]$days_to_death="NA"
+survival_treatment$days_to_death<-as.numeric(survival_treatment$days_to_death)
+sur_treat_nona<-survival_treatment %>% drop_na()
+sur_treat_nona$vital_status<-as.logical(sur_treat_nona$vital_status)
+sur_treat_nona
+```
+
+## Survival Curve
+[Next step is to check other treatments and also make it UI-friendly]
+[Note: check sur_treat_nona: some treatments are administed multiple times for a same patient]]
+```{r}
+#Survival curve#
+fit <- surv_fit(Surv(time = days_to_death,event = vital_status ) ~ Xeloda,data=sur_treat_nona)
+ggsurvplot(fit, data = sur_treat_nona, risk.table = TRUE, conf.int = TRUE,pval=TRUE)
+#https://www.datacamp.com/tutorial/survival-analysis-R
+```
