@@ -6,7 +6,7 @@ Consensus molecular subtypes for colorectal cancer were first established by Gui
 
 # Results
 
-Work on this project was initially done on the DNAnexus platform, although it should be portable to any command line based or gui/command line hybrid bioinformatics ecosystem.  It is available on GitHub at [<url for our repo> ](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022).  
+Work on this project was initially done on the DNAnexus platform, although it should be portable to any command line based or gui/command line hybrid bioinformatics ecosystem.  It is available on GitHub at [](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022).  
 
 Our method performs RNA-seq or microarray analysis on colorectal cancer data, in search of differentially (over/under) expressed genes that the Colotype paper (ref 7) indicates are associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes (ref 8,9,10) for colorectal cancer (table 2), and associates them with various subtypes (radar plots in figures 1-4).  For the purposes of this manuscript, we took the top ten driver (or combination there of) subtype combinations.   
 
