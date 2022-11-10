@@ -14,7 +14,7 @@ The analysis result is then used to generate drug recommendations based on enzym
   
 While validating these drugs, we found that some putative driver mutations (e.g. MLH1) introduced compounds -- with a high molecular score -- we believe to be "noise", by the metrics produced above.  We believe this is because of the collision of the information space of the interactions of the involved pathways -- in this case DNA repair -- with other drugs targeted at eukaryotic pathogens.  When we build our intended learning system, we will take this kind of information into account when calculating molecular scores, for colorectal cancer -- as well as other cancer -- subtypes.  The clinical learning system will be expanded to incorporate more real world evidence, both from rigorous -- and updatable -- searches of clinical trial data, as well as from large scale biobanks, such as the UK Biobank.  
   
-We have made the entire pipeline semi-automatic, such that it may be implemented for other cancer types with definable CMS, such as bladder, small cell lung cancer or ovarian cancer (ref 11, 12, 13).  
+We have made the entire pipeline semi-automatic, such that it may be implemented for other cancer types with definable CMS, such as bladder, small cell lung cancer or ovarian cancer (ref 11, 12, 13).  Subtyping is based on a modified version of the CMScaller algorithm.  Our implementation can be found <here> and the original work can be found at (ref 14) and <here>.  
   
 Overall, this entire workflow creates a link between a colorectal cancer subtype that a specific patient is suffering from, and a drug or small list of drugs that may be specifically effective in the treatment of an individuals' disease.  
   
