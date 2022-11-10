@@ -1,0 +1,69 @@
+---
+title: "SurvivalAnalysis_NormalizedDrugs_GEO"
+author: "Yusuke Suita"
+date: "2022-11-10"
+output: html_document
+runtime: shiny
+---
+
+The goal of this study is to determine optimal drugs for a specific subtype. 
+To achieve the goal, this script returns survival analysis on the selected patient groups (group with a particurally subtype and two different treatment groups). Using this survival analysis, you can test the effect of a drug on a particular subtype of patients.
+
+Inputs are GEO correctal cancer patients (sample_id) with overall survival data (e.g. overall survival, progression_free_survival), subtype, and treatments
+
+Expected outputs are survival analysis for population of the patients with specific subtypes and treatments
+
+## Download libraries
+```{r setup, include=FALSE}
+library(dplyr)
+library(survminer)
+library(survival)
+library(tidyr) 
+library(shiny)
+```
+
+## Data inputs and data cleaning
+```{r eruptions, echo=FALSE}
+#Install treatment and clinical data
+##Treatment/survival data with normalized drugs
+col_norm_treat<-read.csv(file="/Users/ysuita/Desktop/Disease_Subtyping_2022/GSE72970_sample_metadata_raw.csv")
+#Create table for list of drugs
+table(col_norm_treat$normalized_drug)
+
+#col_norm_treat_clean<-col_norm_treat[c("sample_id","normalized_drug","progression_free_survival","overall_survival")]
+
+##Subtype data
+subtype<-read.csv(file="/Users/ysuita/Desktop/Disease_Subtyping_2022/gse72970_cmscaller_subtype.csv")
+colnames(subtype)[1:2]<-c("sample_id","subtype")
+colnames(subtype)
+
+##Combine treatment/survival/subtype data based on sample_id
+combined<-merge(col_norm_treat_clean,subtype,by="sample_id")
+#remove NA rows
+combined_clean<-combined %>% drop_na
+#add vital status
+combined_clean$vital_status<-rep(c(1),rep=nrow(combined_clean))
+```
+
+##Drug/subtype selection and survival analysis function 
+```{r}
+compared_drugs<-function(drug1,drug2,subtype){
+###Pick 2 treatments
+combined_clean_druginterest<-combined_clean[combined_clean$normalized_drug==drug1|combined_clean$normalized_drug==drug2,]
+
+###Pick subtype
+combined_clean_druginterest_subtypeinterest<-combined_clean_druginterest[combined_clean_druginterest$subtype==subtype,]
+
+###Survival analysis
+fit <- surv_fit(Surv(time = overall_survival,event = vital_status ) ~ normalized_drug ,data=combined_clean_druginterest_subtypeinterest)
+ggsurvplot(fit, data = combined_clean_druginterest_subtypeinterest, risk.table = TRUE, conf.int = TRUE,pval=TRUE)
+}
+```
+
+##Run function 
+
+Usage of this function: Put drug names listed in the drug table above (ex. drug1="fluorouracil|leucovorin|irinotecan" drug2="bevacizumab|fluorouracil|leucovorin|irinotecan") and pick subtype from CMS1, CMS2, CMS3, or CMS4. 
+```{r}
+#Input examples
+compared_drugs(drug1="fluorouracil|leucovorin|irinotecan", drug2="bevacizumab|fluorouracil|leucovorin|irinotecan", subtype="CMS3")
+```
