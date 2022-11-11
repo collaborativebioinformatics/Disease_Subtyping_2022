@@ -1,5 +1,11 @@
 # Disease_Subtyping_2022
 
+# Validating Subtype Specific Oncology Drug Predictions
+
+# Authors
+
+Jedrez Kubica, Emerson Huitt, Yusuke S, Amanda Khoo, Nick G, [other previous collaborators], Ben Busby
+
 # Abstract
 
 There are an impressive number of data and code reproducibility initiatives, both within Europe and across the world.  To motivate researchers to use this amazing infrastructure, we must show the translational research community that the aforementioned initiatives are able to drive change in translational science.  Here we demonstrate that using public datasets, it is reasonable to build a pipeline for proposal and validation of driver mutation and subtype specific colorectal cancer medications.  While both molecular, clinical and chemical name harmonization was necessary, open data and code initiatives -- while varied in their approaches -- made this project possible.  
