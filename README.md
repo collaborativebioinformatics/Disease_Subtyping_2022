@@ -1,5 +1,3 @@
-# Disease_Subtyping_2022
-
 # Validating Subtype Specific Oncology Drug Predictions
 
 # Authors
