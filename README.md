@@ -2,7 +2,7 @@
 
 # Authors
 
-Jedrez Kubica, Emerson Huitt, Yusuke S, Amanda Khoo, Nick G, [other previous collaborators], Ben Busby
+Jędrzej Kubica, Emerson Huitt, Yusuke S, Amanda Khoo, Nick G, [other previous collaborators], Ben Busby
 
 # Abstract
 
@@ -14,25 +14,11 @@ Consensus molecular subtypes for colorectal cancer were first established by Gui
 
 # Results
 
-Work on this project was initially done on the DNAnexus platform, although it should be portable to any command line based or gui/command line hybrid bioinformatics ecosystem.  It is available on GitHub at [https://github.com/collaborativebioinformatics/Disease_Subtyping_2022].
+Work on this project was initially done on the DNAnexus platform, although it should be portable to any command line based or gui/command line hybrid bioinformatics ecosystem.  It is available on GitHub at ![repo](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022).  
 
 Our method performs RNA-seq or microarray analysis on colorectal cancer data, in search of differentially (over/under) expressed genes that the Colotype paper (ref 7) indicates are associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes (ref 8,9,10) for colorectal cancer (table 1), and associates them with various subtypes (Figures 1-4).  For the purposes of this manuscript, we took the top ten driver (or combination there of) subtype combinations. 
 
-## Figure 1a - Frequency of Driver Mutation Combinations in CMS1
-
-![Figure 1a](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms1_radar_plot.png?raw=true)
-
-## Figure 1b - Frequency of Driver Mutation Combinations in CMS2
-
-![Figure 1b](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms2_radar_plot.png?raw=true)
-
-## Figure 1c - Frequency of Driver Mutation Combinations in CMS3
-
-![Figure 1c](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms3_radar_plot.png?raw=true)
-
-## Figure 1d - Frequency of Driver Mutation Combinations in CMS4
-
-![Figure 1d](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms4_radar_plot.png?raw=true)
+![Figure 1a]([https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/radar_plots/cms1_radar_plot.png](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms1_radar_plot.png))
 
 The analysis result is then used to generate drug recommendations based on enzymes involved in those pathways and finding their inhibitors or activators. A quantitative molecular score is then generated for these results (supplemental table 1).  The drug recommendations are then evaluated for clinical tolerance and indications of efficacy, generating a quantitative score from those metrics.  The absolute number of (colorectal cancer OR colon cancer) AND {drug name} mentions (google scholar) are first divided by mentions of the drug name with cancer to determine a "cancer specificity index".  To be clear, we do not necessarily assume that cancer drugs are the only effective "off-label" therapeutics for colorectal cancer.  A separate frequency index is calculated by dividing the absolute number of mentions by the frequency of searches on the indexable internet. Additional categorical factors were assigned: whether the drug appeared in any trial, whether the drug was approved, whether the drug was already in use as an adjuvant or chemotherapeutic, and whether there was onoging research around the drug. These scores were standardized using the scikit.learn package and averaged to create an overall index score. Those with a calculable score are shown in table 1.  We intend to "reverse" this process to analyze the potential efficacy of drugs that are "on-label" and in clinical trials. Additionally we intend improve these scores by including data about adverse events and by collecting enough data to appropriately weight the components of score when they are averaged.       
 
@@ -67,6 +53,13 @@ Overall, this entire workflow creates a link between a colorectal cancer subtype
 # Discussion
 
 # References
+
+1. Buechler SA, Stephens MT, Hummon AB, Ludwig K, Cannon E, Carter TC, Resnick J, Gökmen-Polar Y, Badve SS. ColoType: a forty gene signature for consensus molecular subtyping of colorectal cancer tumors using whole-genome assay or targeted RNA-sequencing. Sci Rep. 2020 Jul 21;10(1):12123. doi: 10.1038/s41598-020-69083-y. PMID: 32694712; PMCID: PMC7374173.
+2. Guinney, J., Dienstmann, R., Wang, X. et al. The consensus molecular subtypes of colorectal cancer. Nat Med 21, 1350–1356 (2015). https://doi.org/10.1038/nm.3967
+3. Eide, P.W., Bruun, J., Lothe, R.A. et al. CMScaller: an R package for consensus molecular subtyping of colorectal cancer pre-clinical models. Sci Rep 7, 16618 (2017). https://doi.org/10.1038/s41598-017-16747-x
+4. John Erol Evangelista, Daniel J B Clarke, Zhuorui Xie, Alexander Lachmann, Minji Jeon, Kerwin Chen, Kathleen M Jagodnik, Sherry L Jenkins, Maxim V Kuleshov, Megan L Wojciechowicz, Stephan C Schürer, Mario Medvedovic, Avi Ma’ayan, SigCom LINCS: data and metadata search engine for a million gene expression signatures, Nucleic Acids Research, Volume 50, Issue W1, 5 July 2022, Pages W697–W709, https://doi.org/10.1093/nar/gkac328
+
+The results <published or shown> here are in whole or part based upon data generated by the TCGA Research Network: https://www.cancer.gov/tcga
 
 ## Relevant Literature
 
