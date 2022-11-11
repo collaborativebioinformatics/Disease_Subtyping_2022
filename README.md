@@ -52,6 +52,9 @@ Overall, this entire workflow creates a link between a colorectal cancer subtype
   
 # Discussion
 
+We have created a basic validation platform for driver mutation and subtype specific drug predictions for colorectal cancer.  There are four general directions toward which we'd like to expand.  First, having a more automated data import and metadata harmonization pipeline for transcriptional and clinical data, leveraging modern data sharing and management techniques.  Second, developing a semantic web based learning system off the back of this analysis, such that scores can be continually be refined as more biobanks, clinical trials and RWE comes online. 
+Third, developing both a proteomic and DNA-based method for CMS subtyping that can be leveraged as clinical diagnostics.  Fourth, expanding this analysis to other cancers that have identified CMS, such as ovarian, bladder and small cell lung cancer.  
+
 # References
 
 [^1]: Buechler SA, Stephens MT, Hummon AB, Ludwig K, Cannon E, Carter TC, Resnick J, Gökmen-Polar Y, Badve SS. ColoType: a forty gene signature for consensus molecular subtyping of colorectal cancer tumors using whole-genome assay or targeted RNA-sequencing. Sci Rep. 2020 Jul 21;10(1):12123. doi: 10.1038/s41598-020-69083-y. PMID: 32694712; PMCID: PMC7374173.
