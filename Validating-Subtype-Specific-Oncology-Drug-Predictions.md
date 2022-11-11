@@ -11,8 +11,30 @@ Work on this project was initially done on the DNAnexus platform, although it sh
 Our method performs RNA-seq or microarray analysis on colorectal cancer data, in search of differentially (over/under) expressed genes that the Colotype paper (ref 7) indicates are associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes (ref 8,9,10) for colorectal cancer (table 2), and associates them with various subtypes (radar plots in figures 1-4).  For the purposes of this manuscript, we took the top ten driver (or combination there of) subtype combinations.   
 
 The analysis result is then used to generate drug recommendations based on enzymes involved in those pathways and finding their inhibitors or activators. A quantitative molecular score is then generated for these results (supplemental table 1).  The drug recommendations are then evaluated for clinical tolerance and indications of efficacy, generating a quantitative score from those metrics.  The absolute number of (colorectal cancer OR colon cancer) AND {drug name} mentions (google scholar) are first divided by mentions of the drug name with cancer to determine a "cancer specificity index".  To be clear, we do not necessarily assume that cancer drugs are the only effective "off-label" therapeutics for colorectal cancer.  A separate frequency index is calculated by dividing the absolute number of mentions by the frequency of searches on the indexable internet. Additional categorical factors were assigned: whether the drug appeared in any trial, whether the drug was approved, whether the drug was already in use as an adjuvant or chemotherapeutic, and whether there was onoging research around the drug. These scores were standardized using the scikit.learn package and averaged to create an overall index score. Those with a calculable score are shown in table 2.  We intend to "reverse" this process to analyze the potential efficacy of drugs that are "on-label" and in clinical trials. Additionally we intend improve these scores by including data about adverse events and by collecting enough data to appropriately weight the components of score when they are averaged.       
+
+| predicted_therapy   | crc_specificity_score | evidence_score | approved |
+|---------------------|----------------------:|---------------:|---------:|
+| sirolimus           |                 0.523 |          0.855 |      1.0 |
+| birinapant          |                 0.512 |          0.252 |      0.0 |
+| Licarbazepine       |                 0.321 |          0.500 |      1.0 |
+| Y27632              |                 0.297 |          0.250 |      0.0 |
+| gliquidone          |                 0.294 |          0.500 |      1.0 |
+| Bendamustine        |                 0.292 |          0.799 |      1.0 |
+| rituximab           |                 0.286 |           1.00 |      1.0 |
+| Clofibrate          |                 0.260 |          0.500 |      1.0 |
+| Fenofibrate         |                 0.258 |          0.502 |      1.0 |
+| Bezafibrate         |                 0.256 |          0.500 |      1.0 |
+| U0126               |                 0.253 |            0.0 |      0.0 |
+| SB-590885           |                 0.251 |            0.0 |      0.0 |
+| apafant             |                 0.049 |            0.0 |      0.0 |
+| CI-1040 (PD-184352) |                 0.024 |          0.250 |      0.0 |
+| BRD-A90543464       |                   0.0 |            0.0 |      0.0 |
+| BRD-K12707269       |                   0.0 |            0.0 |      0.0 |
+
+**Table 2**: Standardized scores for predicted therapeutic compounds ranked by colo-rectal
+         specificity, evidence support, and then approval status 
   
-While validating these drugs, we found that some putative driver mutations (e.g. MLH1) introduced compounds -- with a high molecular score -- we believe to be "noise", by the metrics produced above.  We believe this is because of the collision of the information space of the interactions of the involved pathways -- in this case DNA repair -- with other drugs targeted at eukaryotic pathogens.  When we build our intended learning system, we will take this kind of information into account when calculating molecular scores, for colorectal cancer -- as well as other cancer -- subtypes.  The clinical learning system will be expanded to incorporate more real world evidence, both from rigorous -- and updatable -- searches of clinical trial data, as well as from large scale biobanks, such as the UK Biobank.  To that end, we have provided a file (github link) outlining synonyms for the drug names we find to be relevant to colo rectal cancer [here (github link to Emersons's JSON file of synonyms)].
+While validating these drugs, we found that some putative driver mutations (e.g. MLH1) introduced compounds -- with a high molecular score -- we believe to be "noise", by the metrics produced above.  We believe this is because of the collision of the information space of the interactions of the involved pathways -- in this case DNA repair -- with other drugs targeted at eukaryotic pathogens.  When we build our intended learning system, we will take this kind of information into account when calculating molecular scores, for colorectal cancer -- as well as other cancer -- subtypes.  The clinical learning system will be expanded to incorporate more real world evidence, both from rigorous -- and updatable -- searches of clinical trial data, as well as from large scale biobanks, such as the UK Biobank.  To that end, we have provided [a notebook](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/emerson-edits/generate_synonyms.ipynb) for generating synonyms for the drug names we find to be relevant to colo rectal cancer.  These synonyms were used to normalize patient treatment data used in our analysis.
   
 We have made the entire pipeline semi-automatic, such that it may be implemented for other cancer types with definable CMS, such as bladder, small cell lung cancer or ovarian cancer (ref 11, 12, 13).  Subtyping is based on a modified version of the CMScaller algorithm.  Our implementation can be found <here> and the original work can be found at (ref 14) and <here>.  
   
