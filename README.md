@@ -1,8 +1,9 @@
-Validating Subtype Specific Oncology Drug Predictions
+# Validating Subtype Specific Oncology Drug Predictions
 
 # Authors
 
-Jędrzej Kubica, Emerson Huitt, Yusuke S, Amanda S. Khoo, Nick G, [other previous collaborators], Ben Busby
+
+Jędrzej Kubica, Emerson Huitt, Yusuke Suita, Amanda S. Khoo, Hyongyoung Shin, David Enoma, Nick Giangreco, Ben Busby
 
 # Abstract
 
