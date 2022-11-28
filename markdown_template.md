@@ -1,24 +1,47 @@
 ---
 title: 'BioHackrXiv  template'
 tags:
-  - replace with your own keywords
-  - at least 3 is recommended
+  - cancer, drug prediction, public data
+  - 
 authors:
-  - name: First Last
-    orcid: 0000-0000-0000-0000
+  - name: Jędrzej Kubica
+    orcid: 0000-0001-7037-3900
     affiliation: 1
-  - name: Second Last
+  - name: Emerson Huitt
     orcid: 0000-0000-0000-0000
     affiliation: 2
+  - name: Emerson Huitt
+    orcid: 0000-0000-0000-0000
+    affiliation: 2
+  - name: Emerson Huitt
+    orcid: 0000-0000-0000-0000
+    affiliation: 2
+  - name: Emerson Huitt
+    orcid: 0000-0000-0000-0000
+    affiliation: 2
+  - name: Emerson Huitt
+    orcid: 0000-0000-0000-0000
+    affiliation: 2
+  - name: Ben Busby
+    orcid: 0000-0000-0000-0000
+    affiliation: 2
+   
 
 affiliations:
- - name: Institution 1, address, city, country
-   index: 1
- - name: Institution 1, address, city, country
+ - name: Jędrzej Kubica
+jj.kubica@student.uw.edu.pl
+Laboratory of Structural Bioinformatics, Institute of Evolutionary Biology, Faculty of Biology
+Laboratory of Theory of Biopolymers, Faculty of Chemistry
+University of Warsaw, 00-927, Warsaw, Poland
+
+index: 1
+ - name:  Yusuke Suita. Laboratory of Cancer Epigenetics and Plasticity, Therapeutic Sciences Graduate Program, Division of Biology & Medicine, Brown University, United States.  ORCID: 0000-0002-8387-4162
    index: 2
-date: 01 January 2020
+
+
+date: 01 December 2022
 bibliography: paper.bib
-authors_short: Last et al. (2021) BioHackrXiv  template
+authors_short: Kubica et al. (2021) BioHackrXiv  template
 group: BioHackrXiv
 event: BioHackathon Europe 2021
 ---
