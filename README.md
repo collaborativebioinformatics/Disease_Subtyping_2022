@@ -2,7 +2,11 @@
 
 # Authors
 
-Jędrzej Kubica, Emerson Huitt, Yusuke Suita, Amanda S. Khoo, Hyongyoung Shin, David Enoma, Nick Giangreco, Ben Busby
+Jędrzej Kubica<sup>1, 2</sup>, Emerson Huitt, Yusuke Suita<sup>3</sup>, Amanda S. Khoo, Hyongyoung Shin, David Enoma, Nick Giangreco, Ben Busby
+
+<sup>1</sup>Laboratory of Structural Bioinformatics, Institute of Evolutionary Biology, Faculty of Biology, University of Warsaw, 00-927, Warsaw, Poland, <sup>2</sup>Laboratory of Theory of Biopolymers, Faculty of Chemistry, University of Warsaw, 00-927, Warsaw, Poland, <sup>3</sup>Laboratory of Cancer Epigenetics and Plasticity, Therapeutic Sciences Graduate Program, Division of Biology & Medicine, Brown University, 
+
+
 
 # Abstract
 
@@ -47,6 +51,7 @@ To further refine this approach to precision medicine, we built a method to perf
 
 The results of the analysis were used to generate drug recommendations based on enzymes involved in those pathways and to find their inhibitors or activators. A quantitative molecular score was then generated for those results (Table 1).  The drug recommendations were then evaluated for clinical tolerance and indications of efficacy, generating a quantitative score from those metrics.  The absolute number of {colorectal cancer OR colon cancer} AND {drug name} mentions (Google Scholar) were first divided by mentions of the drug name with cancer to determine a 'cancer specificity index'.  To be clear, we did not necessarily assume that cancer drugs were the only effective 'off-label' therapeutics for colorectal cancer. A separate frequency index was calculated by dividing the absolute number of mentions by the frequency of searches on the indexable Internet.  Additional categorical factors were assigned: whether the drug appeared in any clinical trial, whether the drug was approved, whether the drug was already in use as an adjuvant or chemotherapeutic, and whether there had been an onoging research on the drug.  These scores were standardized using the scikit.learn package and averaged to create an overall index score.  Those with a calculable score are shown in Table 1. We intend to reverse this process to analyze the potential efficacy of drugs that are 'on-label' and in clinical trials.  Additionally, we intend to improve these scores by including data about adverse events and by collecting enough data to appropriately weight the components of score when they are averaged.       
 
+**Table 3**: Standardized scores for predicted therapeutic compounds ranked by specificity, evidence support, and approval status.
 | Predicted therapy   | CRC specificity score | Evidence score | Approved |
 |---------------------|----------------------:|---------------:|---------:|
 | Sirolimus           |                 0.523 |          0.855 |      1.0 |
@@ -66,7 +71,6 @@ The results of the analysis were used to generate drug recommendations based on 
 | BRD-A90543464       |                 0.000 |          0.000 |      0.0 |
 | BRD-K12707269       |                 0.000 |          0.000 |      0.0 |
 
-**Table 3**: Standardized scores for predicted therapeutic compounds ranked by specificity, evidence support, and approval status.
   
   
 While validating the drugs, we found that some putative driver mutations (e.g. MLH1) introduced compounds with a high molecular score to be a 'noise', by the metrics produced above.  We believe this happend because of the collision between the information space of the interactions of the involved pathways (in this case DNA repair) and other drugs targeted at eukaryotic pathogens.  When we build our intended learning system, we will take this kind of information into account in order to calculate molecular scores for colorectal cancer subtypes, as well as for other cancer types.  The clinical learning system will be expanded to incorporate more real world evidence, both from rigorous and updatable searches of clinical trial data, as well as from large scale biobanks (such as the UK Biobank) specifically on the UK Biobank Research Analysis Platform (UKBRAP) in that case.  To that end, we have provided [a notebook](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/emerson-edits/generate_synonyms.ipynb) for generating synonyms for the drug names we find to be relevant in colorectal cancer treatment.  The synonyms include publically available data [^11] and synonyms for combination therapies generated as a part of literature review.  These synonyms were used to normalize patient treatment data used in our analysis.
@@ -81,6 +85,10 @@ Overall, the entire workflow creates a link between the colorectal cancer subtyp
 
 We have created a basic validation platform for driver mutation and subtype-specific drug predictions for colorectal cancer.  There are four general directions in which we would like to expand the project.  First, having a more automated data import and metadata harmonization pipeline for transcriptional and clinical data, leveraging modern data sharing and management techniques.  Second, developing a semantic web-based learning system off the back of this analysis, such that scores can be continually refined as more biobanks, clinical trials and RWE comes online. 
 Third, developing a proteomic and a DNA-based methods for CMS subtyping that can be leveraged as clinical diagnostics.  Fourth, expanding this analysis to other cancer types that have identified CMS, such as ovarian, bladder and small cell lung cancer.  
+
+# Acknowledgements
+
+The results <published or shown> here are in whole or part based upon data generated by the TCGA Research Network: https://www.cancer.gov/tcga
 
 # References
 
@@ -100,7 +108,7 @@ Third, developing a proteomic and a DNA-based methods for CMS subtyping that can
 [^14]: Richard W. Tothill, Anna V. Tinker, Joshy George, Robert Brown, Stephen B. Fox, Stephen Lade, Daryl S. Johnson, Melanie K. Trivett, Dariush Etemadmoghadam, Bianca Locandro, Nadia Traficante, Sian Fereday, Jillian A. Hung, Yoke-Eng Chiew, Izhak Haviv, Australian Ovarian Cancer Study Group, Dorota Gertig, Anna deFazio, David D.L. Bowtell; Novel Molecular Subtypes of Serous and Endometrioid Ovarian Cancer Linked to Clinical Outcome. Clin Cancer Res 15 August 2008; 14 (16): 5198–5208. https://doi.org/10.1158/1078-0432.CCR-08-0196
 [^15]: Rudin, C.M., Poirier, J.T., Byers, L.A. et al. Molecular subtypes of small cell lung cancer: a synthesis of human and mouse model data. Nat Rev Cancer 19, 289–297 (2019). https://doi.org/10.1038/s41568-019-0133-9
 [^16]: McConkey, D.J., Choi, W. Molecular Subtypes of Bladder Cancer. Curr Oncol Rep 20, 77 (2018). https://doi.org/10.1007/s11912-018-0727-5
-[^17]: Okita A, Takahashi S, Ouchi K, Inoue M, Watanabe M, Endo M, Honda H, Yamada Y, Ishioka C. Consensus molecular subtypes classification of colorectal cancer as a predictive factor for chemotherapeutic efficacy against metastatic colorectal cancer. Oncotarget. 2018 Apr 10;9(27):18698-18711. doi: 10.18632/oncotarget.24617. PMID: 29721154; PMCID: PMC5922348.
+[^17]: Okita, A., Takahashi, S., Ouchi, K., Inoue, M., Watanabe, M., Endo, M., Honda, H., Yamada, Y., & Ishioka, C. (2018). Consensus molecular subtypes classification of colorectal cancer as a predictive factor for chemotherapeutic efficacy against metastatic colorectal cancer. Oncotarget, 9(27), 18698–18711. https://doi.org/10.18632/oncotarget.24617
 [^18]: S. Stintzing, P. Wirapati, H.-J. Lenz, D. Neureiter, L. Fischer von Weikersthal, T. Decker, A. Kiani, F. Kaiser, S. Al-Batran, T. Heintges, C. Lerchenmüller, C. Kahl, G. Seipelt, F. Kullmann, M. Moehler, W. Scheithauer, S. Held, D.P. Modest, A. Jung, T. Kirchner, D. Aderka, S. Tejpar, V. Heinemann,
 Consensus molecular subgroups (CMS) of colorectal cancer (CRC) and first-line efficacy of FOLFIRI plus cetuximab or bevacizumab in the FIRE3 (AIO KRK-0306) trial, Annals of Oncology, Volume 30, Issue 11, 2019, Pages 1796-1803, ISSN 0923-7534, https://doi.org/10.1093/annonc/mdz387.
 [^19]: Arndt Stahler, Volker Heinemann, Veronika Schuster, Kathrin Heinrich, Annika Kurreck, Clemens Gießen-Jung, Ludwig Fischer von Weikersthal, Florian Kaiser, Thomas Decker, Swantje Held, Ullrich Graeven, Ingo Schwaner, Claudio Denzlinger, Michael Schenk, Jens Neumann, Thomas Kirchner, Andreas Jung, Jörg Kumbrink, Sebastian Stintzing, Dominik P. Modest,
@@ -108,49 +116,6 @@ Consensus molecular subtypes in metastatic colorectal cancer treated with sequen
 [^20]: Smit, W. L., Spaan, C. N., Johannes de Boer, R., Ramesh, P., Martins Garcia, T., Meijer, B. J., Vermeulen, J. L. M., Lezzerini, M., MacInnes, A. W., Koster, J., Medema, J. P., van den Brink, G. R., Muncan, V., & Heijmans, J. (2020). Driver mutations of the adenoma-carcinoma sequence govern the intestinal epithelial global translational capacity. In Proceedings of the National Academy of Sciences (Vol. 117, Issue 41, pp. 25560–25570). Proceedings of the National Academy of Sciences. https://doi.org/10.1073/pnas.1912772117
          
 ## Supplemental Links (Data and Tools)
-
-The results <published or shown> here are in whole or part based upon data generated by the TCGA Research Network: https://www.cancer.gov/tcga
-
-## Relevant Literature
-
-Clinical Outcomes:
-
-https://pubmed.ncbi.nlm.nih.gov/33041226/
-
-Colotype:
-
-https://www.nature.com/articles/s41598-020-69083-y
-
-SV stuff:
-
-https://www.frontiersin.org/articles/10.3389/fcell.2021.758776/full 
-
-https://www.nature.com/articles/s41586-019-1913-9
-
-CRC CMS:
-
-https://www.nature.com/articles/nm.3967#MOESM37
-
-Proteomics:
-
-https://pubmed.ncbi.nlm.nih.gov/31031003/
-
-https://www.nature.com/articles/nature13438
-
-Small Cell Lung Cancer:
-
-https://pubmed.ncbi.nlm.nih.gov/31877723/
-
-Ovarian Cancer:
-
-https://link.springer.com/article/10.1186/s13073-021-00952-5
-
-## Relevant repos
-
-https://github.com/BioITHackathons/Creating-Computable-Knowledge-from-Unstructured-Information (Emerson look at this)
-
-the script with 'drug vs association count' table: https://github.com/collaborativebioinformatics/Disease_subsetting/blob/main/maayan-drug-discovery.ipynb
-
 
 ## Relevant datasets
 
