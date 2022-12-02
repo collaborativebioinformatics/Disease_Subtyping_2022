@@ -6,7 +6,7 @@ Jędrzej Kubica, Emerson Huitt, Yusuke Suita, Amanda S. Khoo, Hyongyoung Shin, D
 
 # Abstract
 
-There are an impressive number of data and code reproducibility initiatives, both within Europe and across the world.  To motivate researchers to use this amazing infrastructure, we must show the translational research community that the aforementioned initiatives are able to drive change in translational science.  Here we demonstrate that using public datasets, it is reasonable to build a pipeline for proposal and validation of driver mutation and subtype-specific colorectal cancer medications.  While all three molecular, clinical and chemical name harmonization were necessary, open data and code initiatives -- while varied in their approaches -- made this project possible.  
+There is an impressive number of data and code reproducibility initiatives, both within Europe and across the world.  To motivate researchers to use this amazing infrastructure, we must show the translational research community that the aforementioned initiatives are able to drive change in translational science.  Here we demonstrate that using public datasets, it is reasonable to build a pipeline for proposal and validation of driver mutation and subtype-specific colorectal cancer medications.  While all three molecular, clinical and chemical name harmonization were necessary, open data and code initiatives, while varied in their approaches, made this project possible.  
 
 # Introduction and Methods
 
@@ -27,7 +27,7 @@ To confirm the assertion made by a number of authors that the efficacy of treatm
 **Figure 2.** Survival analysis curve for patients with CMS1 who received either bevacizumab, fluorouracil, leucovorin, and irinotecan (red line) or  fluorouracil, leucovorin, and irinotecan (blue line).
 
 
-To further refine this approach to precision medicine, we built a method to perform an RNA-seq or microarray analysis on colon cancer data searching for differentially over- or underexpressed genes that have been demonstrated in the paper by and Buechler collaborators [^1] to be associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes for colorectal cancer [^20], and associates them with various subtypes.  For the purposes of this manuscript, we show the top driver genes (or combination there of) for particular subtypes, outlined in the radar plots shown in Figures 2 a-d.  
+To further refine this approach to precision medicine, we built a method to perform an RNA-seq or microarray analysis on colon cancer data searching for differentially over- or underexpressed genes that have been demonstrated in the paper by Buechler and collaborators [^1] to be associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes for colorectal cancer [^20], and associates them with various subtypes.  For the purposes of this manuscript, we show the top driver genes (or combination there of) for particular subtypes, outlined in the radar plots shown in Figures 2 a-d.  
 
 ![Figure 2a](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms1_radar_plot.png)
 **Figure 2a.** Top driver genes (or their combinations) for CMS1.
