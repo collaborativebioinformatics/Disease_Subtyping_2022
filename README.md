@@ -84,7 +84,7 @@ Third, developing a proteomic and a DNA-based methods for CMS subtyping that can
 
 # References
 
-[^1]: Buechler SA, Stephens MT, Hummon AB, Ludwig K, Cannon E, Carter TC, Resnick J, Gökmen-Polar Y, Badve SS. ColoType: a forty gene signature for consensus molecular subtyping of colorectal cancer tumors using whole-genome assay or targeted RNA-sequencing. Sci Rep. 2020 Jul 21;10(1):12123. doi: 10.1038/s41598-020-69083-y. PMID: 32694712; PMCID: PMC7374173.
+[^1]: Buechler, S.A., Stephens, M.T., Hummon, A.B. et al. ColoType: a forty gene signature for consensus molecular subtyping of colorectal cancer tumors using whole-genome assay or targeted RNA-sequencing. Sci Rep 10, 12123 (2020). https://doi.org/10.1038/s41598-020-69083-y
 [^2]: Guinney, J., Dienstmann, R., Wang, X. et al. The consensus molecular subtypes of colorectal cancer. Nat Med 21, 1350–1356 (2015). https://doi.org/10.1038/nm.3967
 [^3]: Eide, P.W., Bruun, J., Lothe, R.A. et al. CMScaller: an R package for consensus molecular subtyping of colorectal cancer pre-clinical models. Sci Rep 7, 16618 (2017). https://doi.org/10.1038/s41598-017-16747-x
 [^4]: John Erol Evangelista, Daniel J B Clarke, Zhuorui Xie, Alexander Lachmann, Minji Jeon, Kerwin Chen, Kathleen M Jagodnik, Sherry L Jenkins, Maxim V Kuleshov, Megan L Wojciechowicz, Stephan C Schürer, Mario Medvedovic, Avi Ma’ayan, SigCom LINCS: data and metadata search engine for a million gene expression signatures, Nucleic Acids Research, Volume 50, Issue W1, 5 July 2022, Pages W697–W709, https://doi.org/10.1093/nar/gkac328
@@ -156,8 +156,9 @@ the script with 'drug vs association count' table: https://github.com/collaborat
 
 #### Proteomics
 
-CPTAC
+CPTAC (Clinical Proteomic Tumor Analysis Consortium)
   https://proteomic.datacommons.cancer.gov/pdc/
+  
 The Human Protein Atlas
   https://www.proteinatlas.org
   
@@ -165,31 +166,27 @@ The Human Protein Atlas
 
 EU Clinical Trials Registry
   https://www.clinicaltrialsregister.eu
+  
 US Clinical Trials Registry
-  clinicaltrials.gov
+  https://clinicaltrials.gov
 
 #### Cancer Datasets
 
-TCGA (SV)
-
-  <Link missing>
-
-<Header missing>
-
+TCGA (The Cancer Genome Atlas)
   https://www.cell.com/cell/fulltext/S0092-8674(18)30229-0
   
-<Header missing>
-  xena.ucsc.edu
+UCSC Xena
+  http://xena.ucsc.edu
 
 #### SRA dataset list
 
-See files
-  SRR_Acc_List_cms{x}.txt
+See files:
+  [data/SRR_Acc_List_cms{x}.txt](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/tree/main/data)
 
 #### Biobanks 
 
 UK Biobank
-  ukbiobank.dnanexus.com
+  https://ukbiobank.dnanexus.com
 
 #### Imaging repositories
 
@@ -198,8 +195,8 @@ TCIA (The Cancer Imaging Archive)
 
 ## Tools
 
-SUMO: https://github.com/ratan-lab/sumo
+SUMO (subtyping tool for multi-omic data): https://github.com/ratan-lab/sumo
 
-MultiPLIER: https://github.com/greenelab/multi-plier
+MultiPLIER (unsupervised transfer learning approach for rare disease transcriptomics): https://github.com/greenelab/multi-plier
 
-Boruta R package (feature selection): https://www.jstatsoft.org/article/view/v036i11
+Boruta (R package for feature selection): https://www.jstatsoft.org/article/view/v036i11
