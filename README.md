@@ -21,22 +21,29 @@ To confirm the assertion made by a number of authors that the efficacy of treatm
 
 ![Figure 1: survival curve of patients who received bevacizumab, fluorouracil, leucovorin, and irinotecan vs fluorouracil, leucovorin, and irinotecan (CMS4)](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/6c4c6cc74e15111db3172218de202ea2ef79dd79/survivalcurve_plots/CMS4.jpeg)
 **Figure 1.** Survival analysis curve for patients with CMS4 who received either bevacizumab, fluorouracil, leucovorin, and irinotecan (red line) or fluorouracil, leucovorin, and irinotecan (blue line).
+
+
 ![Figure 1: survival curve of patients who received bevacizumab, fluorouracil, leucovorin, and irinotecan vs fluorouracil, leucovorin, and irinotecan ( CMS1)](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/6c4c6cc74e15111db3172218de202ea2ef79dd79/survivalcurve_plots/CMS1.jpeg)
 **Figure 2.** Survival analysis curve for patients with CMS1 who received either bevacizumab, fluorouracil, leucovorin, and irinotecan (red line) or  fluorouracil, leucovorin, and irinotecan (blue line).
+
 
 To further refine this approach to precision medicine, we built a method to perform an RNA-seq or microarray analysis on colon cancer data searching for differentially over- or underexpressed genes that have been demonstrated in the paper by and Buechler collaborators [^1] to be associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes for colorectal cancer [^20], and associates them with various subtypes.  For the purposes of this manuscript, we show the top driver genes (or combination there of) for particular subtypes, outlined in the radar plots shown in Figures 2 a-d.  
 
 ![Figure 2a](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms1_radar_plot.png)
 **Figure 2a.** Top driver genes (or their combinations) for CMS1.
 
+
 ![Figure 2b](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms2_radar_plot.png)
 **Figure 2b.** Top driver genes (or their combinations) for CMS2.
+
 
 ![Figure 2c](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms3_radar_plot.png)
 **Figure 2c.** Top driver genes (or their combinations) for CMS3.
 
+
 ![Figure 2d](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/main/radar_plots/cms4_radar_plot.png)
 **Figure 2d.** Top driver genes (or their combinations) for CMS4.
+
 
 The results of the analysis were used to generate drug recommendations based on enzymes involved in those pathways and to find their inhibitors or activators. A quantitative molecular score was then generated for those results (Table 1).  The drug recommendations were then evaluated for clinical tolerance and indications of efficacy, generating a quantitative score from those metrics.  The absolute number of {colorectal cancer OR colon cancer} AND {drug name} mentions (Google Scholar) were first divided by mentions of the drug name with cancer to determine a 'cancer specificity index'.  To be clear, we did not necessarily assume that cancer drugs were the only effective 'off-label' therapeutics for colorectal cancer. A separate frequency index was calculated by dividing the absolute number of mentions by the frequency of searches on the indexable Internet.  Additional categorical factors were assigned: whether the drug appeared in any clinical trial, whether the drug was approved, whether the drug was already in use as an adjuvant or chemotherapeutic, and whether there had been an onoging research on the drug.  These scores were standardized using the scikit.learn package and averaged to create an overall index score.  Those with a calculable score are shown in Table 1. We intend to reverse this process to analyze the potential efficacy of drugs that are 'on-label' and in clinical trials.  Additionally, we intend to improve these scores by including data about adverse events and by collecting enough data to appropriately weight the components of score when they are averaged.       
 
@@ -60,6 +67,7 @@ The results of the analysis were used to generate drug recommendations based on 
 | BRD-K12707269       |                 0.000 |          0.000 |      0.0 |
 
 **Table 3**: Standardized scores for predicted therapeutic compounds ranked by specificity, evidence support, and approval status.
+  
   
 While validating the drugs, we found that some putative driver mutations (e.g. MLH1) introduced compounds with a high molecular score to be a 'noise', by the metrics produced above.  We believe this happend because of the collision between the information space of the interactions of the involved pathways (in this case DNA repair) and other drugs targeted at eukaryotic pathogens.  When we build our intended learning system, we will take this kind of information into account in order to calculate molecular scores for colorectal cancer subtypes, as well as for other cancer types.  The clinical learning system will be expanded to incorporate more real world evidence, both from rigorous and updatable searches of clinical trial data, as well as from large scale biobanks (such as the UK Biobank) specifically on the UK Biobank Research Analysis Platform (UKBRAP) in that case.  To that end, we have provided [a notebook](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/blob/emerson-edits/generate_synonyms.ipynb) for generating synonyms for the drug names we find to be relevant in colorectal cancer treatment.  The synonyms include publically available data [^11] and synonyms for combination therapies generated as a part of literature review.  These synonyms were used to normalize patient treatment data used in our analysis.
   
