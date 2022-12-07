@@ -3,7 +3,11 @@ title: 'Validating Subtype Specific Oncology Drug Predictions'
 tags:
   - BioHackathon
   - Consensus molecular subtypes
+  - Colorectal cancer
   - Gene expression
+  - RNA-seq
+  - Pathway analysis
+  - Clinical outcomes
   - Drug prediction
   - FAIR data
 authors:
