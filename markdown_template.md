@@ -49,7 +49,7 @@ affiliations:
 date: 01 December 2022
 bibliography: paper.bib
 authors_short: Kubica et al. (2021) BioHackrXiv  template
-group: BioHackrXiv
+group: Project 34: Using Federated Public Data for Disease Subtyping and Prediction of Effective Treatments
 event: BioHackathon Europe 2021
 ---
 
