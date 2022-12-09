@@ -15,7 +15,7 @@ authors:
     orcid: 0000-0001-7037-3900
     affiliation: 1,2
   - name: Emerson Huitt
-    affiliation: Snthesis Inc
+    affiliation: 4
   - name: Yusuke Suita
     orcid: 0000-0002-8387-4162
     affiliation: 3
@@ -43,6 +43,8 @@ affiliations:
    index: 2
  - name: Laboratory of Cancer Epigenetics and Plasticity, Therapeutic Sciences Graduate Program, Division of Biology & Medicine, Brown University, United States
    index: 3
+ -name: Snthesis Inc
+   index: 4
 
 
 date: 01 December 2022
