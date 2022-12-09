@@ -28,7 +28,7 @@ authors:
     orcid: 0000-0001-7300-8474
     affiliation: 6
   - name: Nick Giangreco
-    orcid: 0000-0000-0000-0000
+    orcid: 0000-0001-8138-4947
     affiliation: 7
   - name: Ben Busby
     orcid: 0000-0001-5267-4988
@@ -49,9 +49,9 @@ affiliations:
    index: 5
  -name: Noma Integrated Technology Solutions, Port Harcourt, Nigeria
    index: 6
- -name:
+ -name: Regeneron Pharmaceuticals
    index: 7
- -name: DNAnexus, Inc. 1975 W El Camino Real #204, Mountain View, CA 94040
+ -name: DNAnexus, Inc. 1975 W El Camino Real, 204, Mountain View, CA 94040
    index: 8
    
 
