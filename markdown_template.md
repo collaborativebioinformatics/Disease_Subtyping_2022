@@ -15,25 +15,24 @@ authors:
     orcid: 0000-0001-7037-3900
     affiliation: 1,2
   - name: Emerson Huitt
-    affiliation: 4
+    affiliation: 3
   - name: Yusuke Suita
     orcid: 0000-0002-8387-4162
-    affiliation: 3
+    affiliation: 4
   - name: Amanda S. Khoo
-    orcid: 0000-0000-0000-0000
-    affiliation: x
+    orcid: 0000-0002-4519-3243
   - name: Hyongyoung Shin
-    orcid: 0000-0000-0000-0000
-    affiliation: x
+    orcid: 0000-0002-4316-5847
+    affiliation: 5
   - name: David Enoma
-    orcid: 0000-0000-0000-0000
-    affiliation: x
+    orcid: 0000-0001-7300-8474
+    affiliation: 6
   - name: Nick Giangreco
     orcid: 0000-0000-0000-0000
-    affiliation: x
+    affiliation: 7
   - name: Ben Busby
-    orcid: 0000-0000-0000-0000
-    affiliation: x
+    orcid: 0000-0001-5267-4988
+    affiliation: 8
    
 
 affiliations:
@@ -42,9 +41,19 @@ affiliations:
  - name: Laboratory of Theory of Biopolymers, Faculty of Chemistry, University of Warsaw, 00-927, Warsaw, Poland
    index: 2
  - name: Laboratory of Cancer Epigenetics and Plasticity, Therapeutic Sciences Graduate Program, Division of Biology & Medicine, Brown University, United States
-   index: 3
- -name: Snthesis Inc
    index: 4
+ -name: Snthesis Inc., 331 W Main St STE 611, Durham, NC 27701, United States
+   index: 3
+ -name: Department of Electrical and Computer Engineering The University of Texas at Austin
+2501 Speedway, Austin, Texas 78712, USA
+   index: 5
+ -name: Noma Integrated Technology Solutions, Port Harcourt, Nigeria
+   index: 6
+ -name:
+   index: 7
+ -name: DNAnexus, Inc. 1975 W El Camino Real #204, Mountain View, CA 94040
+   index: 8
+   
 
 
 date: 01 December 2022
