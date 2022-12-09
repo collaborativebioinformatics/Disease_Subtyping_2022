@@ -15,8 +15,7 @@ authors:
     orcid: 0000-0001-7037-3900
     affiliation: 1,2
   - name: Emerson Huitt
-    orcid: 0000-0000-0000-0000
-    affiliation: x
+    affiliation: Snthesis Inc
   - name: Yusuke Suita
     orcid: 0000-0002-8387-4162
     affiliation: 3
