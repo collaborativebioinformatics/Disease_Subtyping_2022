@@ -1,6 +1,6 @@
 ---
-title: 'Validating Subtype Specific Oncology Drug Predictions'
-tags:
+# title: 'Validating Subtype Specific Oncology Drug Predictions'
+## tags:
   - BioHackathon
   - Consensus molecular subtypes
   - Colorectal cancer
@@ -10,7 +10,7 @@ tags:
   - Clinical outcomes
   - Drug prediction
   - FAIR data
-authors:
+## authors:
   - name: Jędrzej Kubica
     orcid: 0000-0001-7037-3900
     affiliation: 1,2
@@ -35,7 +35,7 @@ authors:
     affiliation: 8
    
 
-affiliations:
+## affiliations:
  - name: Laboratory of Structural Bioinformatics, Institute of Evolutionary Biology, Faculty of Biology, University of Warsaw, 00-927, Warsaw, Poland
    index: 1
  - name: Laboratory of Theory of Biopolymers, Faculty of Chemistry, University of Warsaw, 00-927, Warsaw, Poland
