@@ -1,4 +1,3 @@
----
 title: 'Validating Subtype Specific Oncology Drug Predictions'
 tags:
   - BioHackathon
@@ -61,7 +60,6 @@ bibliography: paper.bib
 authors_short: Kubica et al. (2022) \emph{et al.}
 group: Project 34: Using Federated Public Data for Disease Subtyping and Prediction of Effective Treatments
 event: BioHackathon Europe 2022
----
 
 
 # Abstract
