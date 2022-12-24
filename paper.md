@@ -43,8 +43,7 @@ affiliations:
     index: 4
   - name: Snthesis Inc., 331 W Main St STE 611, Durham, NC 27701, United States
     index: 3
-  - name: Department of Electrical and Computer Engineering The University of Texas at Austin
-2501 Speedway, Austin, Texas 78712, USA
+  - name: Department of Electrical and Computer Engineering The University of Texas at Austin 2501 Speedway, Austin, Texas 78712, USA
     index: 5
   - name: Noma Integrated Technology Solutions, Port Harcourt, Nigeria
     index: 6
