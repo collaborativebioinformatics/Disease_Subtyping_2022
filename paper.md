@@ -54,8 +54,8 @@ affiliations:
    
 date: 24 December 2022
 bibliography: paper.bib
-authors_short: Kubica et al. (2022) \emph{et al.}
-group: Project 34: Using Federated Public Data for Disease Subtyping and Prediction of Effective Treatments
+authors_short: Kubica \emph{et al.} (2022)
+group: Project 34 Using Federated Public Data for Disease Subtyping and Prediction of Effective Treatments
 event: BioHackathon Europe 2022
 ---
 
