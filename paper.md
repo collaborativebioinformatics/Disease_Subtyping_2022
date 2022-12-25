@@ -64,6 +64,8 @@ event: BioHackathon Europe 2022
 git_url: https://github.com/collaborativebioinformatics/Disease_Subtyping_2022
 ---
 
+<br/>
+
 # Abstract
 
 There is an impressive number of data and code reproducibility initiatives, both within Europe and across the world. To motivate researchers to use this amazing infrastructure, we must show the translational research community that the aforementioned initiatives are able to drive change in translational science. Here we demonstrate that using public datasets, it is reasonable to build a pipeline for proposal and validation of driver mutation and subtype-specific colorectal cancer medications. While all three molecular, clinical and chemical name harmonization were necessary, open data and code initiatives, while varied in their approaches, made this project possible.
@@ -88,8 +90,6 @@ To confirm the assertion made by a number of authors that the efficacy of treatm
 ![Figure 2: survival curve of patients who received bevacizumab, fluorouracil, leucovorin, and irinotecan vs fluorouracil, leucovorin, and irinotecan ( CMS1)](./survivalcurve_plots/CMS1.jpeg)
 **Figure 2.** Survival analysis curve for patients with CMS1 who received either bevacizumab, fluorouracil, leucovorin, and irinotecan (red line) or  fluorouracil, leucovorin, and irinotecan (blue line).
 
-&nbsp
-&nbsp
 
 To further refine this approach to precision medicine, we built a method to perform an RNA-seq or microarray analysis on colon cancer data searching for differentially over- or underexpressed genes that have been demonstrated in the literature [@Buechler2020-xw] to be associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes for colorectal cancer [@Smit2020-ic], and associates them with various subtypes.  For the purposes of this manuscript, we show the top driver genes (or combination there of) for particular subtypes, outlined in the radar plots shown in **Figures 3a-d**.  
 
@@ -108,8 +108,6 @@ To further refine this approach to precision medicine, we built a method to perf
 ![Figure 3d](./radar_plots/cms4_radar_plot.png)
 **Figure 3d.** Top driver genes (or their combinations) for CMS4.
 
-&nbsp
-&nbsp
 
 The results of the analysis were used to generate drug recommendations based on enzymes involved in those pathways and to find their inhibitors or activators. A quantitative molecular score was then generated for those results (see **Table 1**).  The drug recommendations were then evaluated for clinical tolerance and indications of efficacy, generating a quantitative score from those metrics.  The absolute number of {colorectal cancer OR colon cancer} AND {drug name} mentions (Google Scholar) were first divided by mentions of the drug name with cancer to determine a 'cancer specificity index'.  To be clear, we did not necessarily assume that cancer drugs were the only effective 'off-label' therapeutics for colorectal cancer. A separate frequency index was calculated by dividing the absolute number of mentions by the frequency of searches on the indexable Internet.  Additional categorical factors were assigned: whether the drug appeared in any clinical trial, whether the drug was approved, whether the drug was already in use as an adjuvant or chemotherapeutic, and whether there had been an onoging research on the drug.  These scores were standardized using the scikit.learn package and averaged to create an overall index score.  Those with a calculable score are shown in **Table 1**. We intend to reverse this process to analyze the potential efficacy of drugs that are 'on-label' and in clinical trials.  Additionally, we intend to improve these scores by including data about adverse events and by collecting enough data to appropriately weight the components of score when they are averaged.       
 
