@@ -44,7 +44,7 @@ affiliations:
     index: 3
   - name: Laboratory of Cancer Epigenetics and Plasticity, Therapeutic Sciences Graduate Program, Division of Biology & Medicine, Brown University, United States
     index: 4
-  - name: no affiliation
+  - name: No affiliation
     index: 5
   - name: Department of Electrical and Computer Engineering The University of Texas at Austin 2501 Speedway, Austin, Texas 78712, USA
     index: 6
