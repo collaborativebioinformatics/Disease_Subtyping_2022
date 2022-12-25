@@ -13,7 +13,7 @@ tags:
 authors:
   - name: Jędrzej Kubica
     orcid: 0000-0001-7037-3900
-    affiliation: [1,2]
+    affiliation: 1,2
   - name: Emerson Huitt
     affiliation: 3
   - name: Yusuke Suita
@@ -21,6 +21,7 @@ authors:
     affiliation: 4
   - name: Amanda S. Khoo
     orcid: 0000-0002-4519-3243
+    affiliation:
   - name: Hyongyoung Shin
     orcid: 0000-0002-4316-5847
     affiliation: 5
