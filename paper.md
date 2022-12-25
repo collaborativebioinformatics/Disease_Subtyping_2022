@@ -40,10 +40,12 @@ affiliations:
     index: 1
   - name: Laboratory of Theory of Biopolymers, Faculty of Chemistry, University of Warsaw, 00-927, Warsaw, Poland
     index: 2
-  - name: Laboratory of Cancer Epigenetics and Plasticity, Therapeutic Sciences Graduate Program, Division of Biology & Medicine, Brown University, United States
-    index: 4
   - name: Snthesis Inc., 331 W Main St STE 611, Durham, NC 27701, United States
     index: 3
+  - name: Laboratory of Cancer Epigenetics and Plasticity, Therapeutic Sciences Graduate Program, Division of Biology & Medicine, Brown University, United States
+    index: 4
+  - name: no affiliation
+    index: 5
   - name: Department of Electrical and Computer Engineering The University of Texas at Austin 2501 Speedway, Austin, Texas 78712, USA
     index: 6
   - name: Noma Integrated Technology Solutions, Port Harcourt, Nigeria
@@ -52,8 +54,7 @@ affiliations:
     index: 8
   - name: DNAnexus, Inc. 1975 W El Camino Real, 204, Mountain View, CA 94040
     index: 9
-  - name: no affiliation
-    index: 5
+
    
 date: 24 December 2022
 bibliography: paper.bib
