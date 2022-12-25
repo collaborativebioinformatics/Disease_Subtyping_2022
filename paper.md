@@ -81,29 +81,29 @@ Work on this project was initially done on the DNAnexus platform, although it sh
 
 To confirm the assertion made by a number of authors that the efficacy of treatment varies based on subtypes of patients [@Okita2018-lb; Stintzing2019-ux; Stahler2021-vj], we have performed survival analysis on the colorectal patients stratified by subtypes and treatment groups.  First, subtyping of colon cancer patient data was performed using the CMScaller algorithm [@Del_Rio2017-jd]. This algorithm uses Nearest Template Prediction [@Tothill2008-hy] to classify colon cancer expression profiles into predefined subtypes.  Subtyped patients were then stratified by CMS and treatment groups for survival analysis. Data preprocessing, algorithm application and survival analysis code can be found on the [Disease Subtyping 2022 GitHub page](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022) in the [cmscaller_pipeline](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/tree/main/cmscaller_pipeline) folder and in the [scripts](https://github.com/collaborativebioinformatics/Disease_Subtyping_2022/tree/main/scripts) folder. The survival analysis function allows the user to input subtype and treatment group(s) for comparison, and returns the overall survival of such patient with that specific subtype and treatment. This analysis showed that patients with CMS4 that received bevacizumab, fluorouracil, leucovorin, and irinotecan survied longer than those who received only fluorouracil, leucovorin, and irinotecan. On the other hand, patients with CMS1 who received bevacizumab, fluorouracil, leucovorin, and irinotecan survived shorter than those who received only fluorouracil, leucovorin, and irinotecan. This result provides further support for the previous assertion that subtyping can increase the efficacy of treatment. This survival analysis platform can be used to determine which commonly used treatments are best suited for a particular subtype of colon cancer patients.  
 
-![Figure 1: survival curve of patients who received bevacizumab, fluorouracil, leucovorin, and irinotecan vs fluorouracil, leucovorin, and irinotecan (CMS4)](./survivalcurve_plots/CMS4.jpeg)
+![Figure 1: survival curve of patients who received bevacizumab, fluorouracil, leucovorin, and irinotecan vs fluorouracil, leucovorin, and irinotecan (CMS4)](./survivalcurve_plots/CMS4.jpeg)\
 **Figure 1.** Survival analysis curve for patients with CMS4 who received either bevacizumab, fluorouracil, leucovorin, and irinotecan (red line) or fluorouracil, leucovorin, and irinotecan (blue line).
 
 
-![Figure 2: survival curve of patients who received bevacizumab, fluorouracil, leucovorin, and irinotecan vs fluorouracil, leucovorin, and irinotecan ( CMS1)](./survivalcurve_plots/CMS1.jpeg)
+![Figure 2: survival curve of patients who received bevacizumab, fluorouracil, leucovorin, and irinotecan vs fluorouracil, leucovorin, and irinotecan ( CMS1)](./survivalcurve_plots/CMS1.jpeg)\
 **Figure 2.** Survival analysis curve for patients with CMS1 who received either bevacizumab, fluorouracil, leucovorin, and irinotecan (red line) or  fluorouracil, leucovorin, and irinotecan (blue line).
 
 
 To further refine this approach to precision medicine, we built a method to perform an RNA-seq or microarray analysis on colon cancer data searching for differentially over- or underexpressed genes that have been demonstrated in the literature [@Buechler2020-xw] to be associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes for colorectal cancer [@Smit2020-ic], and associates them with various subtypes.  For the purposes of this manuscript, we show the top driver genes (or combination there of) for particular subtypes, outlined in the radar plots shown in **Figures 3a-d**.  
 
-![Figure 3a](./radar_plots/cms1_radar_plot_smaller.png)
+![Figure 3a](./radar_plots/cms1_radar_plot_smaller.png)\
 **Figure 3a.** Top driver genes (or their combinations) for CMS1.
 
 
-![Figure 3b](./radar_plots/cms2_radar_plot_smaller.png)
+![Figure 3b](./radar_plots/cms2_radar_plot_smaller.png)\
 **Figure 3b.** Top driver genes (or their combinations) for CMS2.
 
 
-![Figure 3c](./radar_plots/cms3_radar_plot_smaller.png)
+![Figure 3c](./radar_plots/cms3_radar_plot_smaller.png)\
 **Figure 3c.** Top driver genes (or their combinations) for CMS3.
 
 
-![Figure 3d](./radar_plots/cms4_radar_plot_smaller.png)
+![Figure 3d](./radar_plots/cms4_radar_plot_smaller.png)\
 **Figure 3d.** Top driver genes (or their combinations) for CMS4.
 
 
