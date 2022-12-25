@@ -88,9 +88,6 @@ To confirm the assertion made by a number of authors that the efficacy of treatm
 ![Figure 2: survival curve of patients who received bevacizumab, fluorouracil, leucovorin, and irinotecan vs fluorouracil, leucovorin, and irinotecan ( CMS1)](./survivalcurve_plots/CMS1.jpeg)
 **Figure 2.** Survival analysis curve for patients with CMS1 who received either bevacizumab, fluorouracil, leucovorin, and irinotecan (red line) or  fluorouracil, leucovorin, and irinotecan (blue line).
 
-<br/>
-<br/>
-<br/>
 
 To further refine this approach to precision medicine, we built a method to perform an RNA-seq or microarray analysis on colon cancer data searching for differentially over- or underexpressed genes that have been demonstrated in the literature [@Buechler2020-xw] to be associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes for colorectal cancer [@Smit2020-ic], and associates them with various subtypes.  For the purposes of this manuscript, we show the top driver genes (or combination there of) for particular subtypes, outlined in the radar plots shown in **Figures 3a-d**.  
 
@@ -154,7 +151,7 @@ Third, developing a proteomic and a DNA-based methods for CMS subtyping that can
 
 #### Proteomics
 
-CPTAC (Clinical Proteomic Tumor Analysis Consortium)
+CPTAC (Clinical Proteomic Tumor Analysis Consortium)\
   https://proteomic.datacommons.cancer.gov/pdc/
   
 The Human Protein Atlas
@@ -170,7 +167,7 @@ US Clinical Trials Registry
 
 #### Cancer Datasets
 
-TCGA (The Cancer Genome Atlas)
+TCGA (The Cancer Genome Atlas)\
   https://www.cell.com/cell/fulltext/S0092-8674(18)30229-0
   
 UCSC Xena
@@ -188,7 +185,7 @@ UK Biobank
 
 #### Imaging repositories
 
-TCIA (The Cancer Imaging Archive)
+TCIA (The Cancer Imaging Archive)\
   https://wiki.cancerimagingarchive.net/display/Public/CT+COLONOGRAPHY
 
 ## Tools
