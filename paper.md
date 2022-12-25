@@ -21,19 +21,19 @@ authors:
     affiliation: 4
   - name: Amanda S. Khoo
     orcid: 0000-0002-4519-3243
-    affiliation: -
+    affiliation: 5
   - name: Hyongyoung Shin
     orcid: 0000-0002-4316-5847
-    affiliation: 5
+    affiliation: 6
   - name: David Enoma
     orcid: 0000-0001-7300-8474
-    affiliation: 6
+    affiliation: 7
   - name: Nick Giangreco
     orcid: 0000-0001-8138-4947
-    affiliation: 7
+    affiliation: 8
   - name: Ben Busby
     orcid: 0000-0001-5267-4988
-    affiliation: 8
+    affiliation: 9
     
 affiliations:
   - name: Laboratory of Structural Bioinformatics, Institute of Evolutionary Biology, Faculty of Biology, University of Warsaw, 00-927, Warsaw, Poland
@@ -45,13 +45,15 @@ affiliations:
   - name: Snthesis Inc., 331 W Main St STE 611, Durham, NC 27701, United States
     index: 3
   - name: Department of Electrical and Computer Engineering The University of Texas at Austin 2501 Speedway, Austin, Texas 78712, USA
-    index: 5
-  - name: Noma Integrated Technology Solutions, Port Harcourt, Nigeria
     index: 6
-  - name: Regeneron Pharmaceuticals
+  - name: Noma Integrated Technology Solutions, Port Harcourt, Nigeria
     index: 7
-  - name: DNAnexus, Inc. 1975 W El Camino Real, 204, Mountain View, CA 94040
+  - name: Regeneron Pharmaceuticals
     index: 8
+  - name: DNAnexus, Inc. 1975 W El Camino Real, 204, Mountain View, CA 94040
+    index: 9
+  - name: no affiliation
+    index: 5
    
 date: 24 December 2022
 bibliography: paper.bib
