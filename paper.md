@@ -95,7 +95,7 @@ To confirm the assertion made by a number of authors that the efficacy of treatm
 
 To further refine this approach to precision medicine, we built a method to perform an RNA-seq or microarray analysis on colon cancer data searching for differentially over- or underexpressed genes that have been demonstrated in the literature [@Buechler2020-xw] to be associated with different subtypes of colorectal cancer.  Our method also analyzes 12 different reported driver genes for colorectal cancer [@Smit2020-ic], and associates them with various subtypes.  For the purposes of this manuscript, we show the top driver genes (or combination there of) for particular subtypes, outlined in the radar plots shown in **Figures 3a-d**.  
 
-![Figure 3a](./radar_plots/cms1_radar_plot.png =300x400)
+![Figure 3a](./radar_plots/cms1_radar_plot.png)
 **Figure 3a.** Top driver genes (or their combinations) for CMS1.
 
 
