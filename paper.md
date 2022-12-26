@@ -192,7 +192,8 @@ TCIA (The Cancer Imaging Archive)\
 
 SUMO (subtyping tool for multi-omic data): https://github.com/ratan-lab/sumo
 
-MultiPLIER (unsupervised transfer learning approach for rare disease transcriptomics): https://github.com/greenelab/multi-plier
+MultiPLIER (unsupervised transfer learning approach for rare disease transcriptomics): \
+https://github.com/greenelab/multi-plier
 
 Boruta (R package for feature selection): https://www.jstatsoft.org/article/view/v036i11
 
