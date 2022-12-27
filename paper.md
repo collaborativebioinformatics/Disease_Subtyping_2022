@@ -22,7 +22,7 @@ authors:
   - name: Amanda S. Khoo
     orcid: 0000-0002-4519-3243
     affiliation: 5
-  - name: Hyongyoung Shin
+  - name: Hyonyoung Shin
     orcid: 0000-0002-4316-5847
     affiliation: 6
   - name: David Enoma
@@ -56,7 +56,7 @@ affiliations:
     index: 9
 
    
-date: 26 December 2022
+date: 27 December 2022
 bibliography: paper.bib
 authors_short: Kubica \emph{et al.}
 group: Project 34. Using Federated Public Data for Disease Subtyping and Prediction of Effective Treatments
