@@ -48,7 +48,7 @@ affiliations:
     index: 5
   - name: Department of Electrical and Computer Engineering The University of Texas at Austin 2501 Speedway, Austin, Texas 78712, USA
     index: 6
-  - name: Noma Integrated Technology Solutions, Port Harcourt, Nigeria
+  - name: Noma Integrated Technology Solutions, AB, Canada
     index: 7
   - name: Regeneron Pharmaceuticals
     index: 8
