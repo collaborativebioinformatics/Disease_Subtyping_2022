@@ -56,7 +56,7 @@ affiliations:
     index: 9
 
    
-date: 27 December 2022
+date: 1 January 2023
 bibliography: paper.bib
 authors_short: Kubica \emph{et al.}
 group: Project 34. Using Federated Public Data for Disease Subtyping and Prediction of Effective Treatments
